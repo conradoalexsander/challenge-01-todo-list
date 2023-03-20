@@ -1,16 +1,19 @@
 import styles from './App.module.css';
+import { AddTask } from './components/AddTask';
 import { Header } from './components/Header';
-import { Input } from './components/Input';
 import { TaskList } from './components/TaskList';
 import "./global.css";
 
 function App() {
   return (
-    <div className={styles.wrapper}>
-      <Header />
-      <Input />
-      <TaskList />
+    <div>
+        <Header />
+        <div className={styles.wrapper}>
+          <AddTask />
+          <TaskList />
+        </div>
     </div>
+
   )
 }
 

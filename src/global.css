@@ -32,6 +32,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+body input {
+    color: var(--gray-100);
+}
+
 body,
 input,
 textarea,

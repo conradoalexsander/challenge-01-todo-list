@@ -1,0 +1,32 @@
+.checkMarkIconContainer {
+    background-color: var(--purple-dark);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.checkMarkIconContainer:hover {
+    background-color: var(--purple);
+    opacity: 0.9;
+}
+
+.checkedMarkIcon {
+    color: var(--gray-100);
+    fill: var(--purple);
+}
+
+.uncheckedMarkIcon {
+    color: var(--blue);
+    fill: var(--blue-dark-800);
+    fill-opacity: 0;
+}
+
+.uncheckedMarkIcon:hover {
+    fill-opacity: 1;
+}
