@@ -28,3 +28,8 @@
 .container .description {
     max-width: 632px;
 }
+
+.container .doneTaskText {
+    text-decoration-line: line-through;
+    color: var(--gray-300);
+}

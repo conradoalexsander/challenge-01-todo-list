@@ -13,7 +13,7 @@ export function Task(task: TaskProps) {
       <label  className={styles.container}> 
         <input type="checkbox"/>
         <CheckMark isChecked={task.isDone} />
-        <span className={styles.description}>{task.description}</span>
+        <span className={`${styles.description} ${task.isDone ? styles.doneTaskText : ""}`}>{task.description}</span>
         <Trash size={24}/>
       </label>
     </div>
