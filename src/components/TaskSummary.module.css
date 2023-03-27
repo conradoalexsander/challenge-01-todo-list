@@ -21,13 +21,12 @@
     justify-content: center;
     align-items: center;
 
-    width: 25px;
     height: 19px;
     background-color: var(--gray-400);
     color: var(--gray-200);
     border-radius: 999px;
     text-align: center;
-
+    padding: 2px 8px;
 }
 
 .taskSummary .summaryWrapper:nth-of-type(1) p {

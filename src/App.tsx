@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import styles from './App.module.css';
 import { AddTask } from './components/AddTask';
 import { Header } from './components/Header';
@@ -6,9 +6,15 @@ import { TaskList } from './components/TaskList';
 import TaskSummary from './components/TaskSummary';
 import "./global.css";
 import { Task } from './types/Task';
+import { getArrayLength } from './utils/Arrray.utils';
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
+
+  const completedTasks = useMemo(() => {
+    const completedTasks = tasks?.filter(task => task.isDone);
+    return getArrayLength(completedTasks);
+  }, [tasks])
 
   function createNewTaskHandler(text:string) {
     const newTask : Task = {
@@ -38,12 +44,11 @@ function App() {
         <main className={styles.wrapper}>
           <AddTask createNewTaskHandler={createNewTaskHandler}/>
           <div className={styles.tasksContainer}>
-            <TaskSummary />
+            <TaskSummary createdTasks={getArrayLength(tasks)} completedTasks={completedTasks}/>
             <TaskList deleteTaskHandler={deleteTaskHandler} tasks={tasks} handleTaskDone={handleTaskDone}/>
           </div>
         </main>
     </div>
-
   )
 }
 

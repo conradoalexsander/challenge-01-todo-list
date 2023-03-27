@@ -15,6 +15,7 @@
     border: 1px solid #333333;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
     border-radius: 8px;
+    padding: 16px;
 }
 
 .container input {
@@ -25,11 +26,22 @@
     width: 0;
 }
 
-.container .description {
-    max-width: 632px;
+.checkMarkIcon {
+    width: 24px;
+    height: 24px;
 }
 
-.container .doneTaskText {
+.description {
+    width: 100%;
+    max-height: 40px;
+    overflow: auto;
+}
+
+.doneTaskText {
     text-decoration-line: line-through;
     color: var(--gray-300);
+}
+
+.trashIcon:hover {
+    color: var(--danger);
 }

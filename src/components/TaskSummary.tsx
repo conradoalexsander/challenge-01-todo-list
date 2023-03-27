@@ -1,17 +1,27 @@
 import styles from "./TaskSummary.module.css";
-export default function () {
+
+interface TaskSummaryProps {
+  createdTasks: Number;
+  completedTasks: Number;
+}
+
+export default function ({ createdTasks, completedTasks }: TaskSummaryProps) {
+  function GetCompletedTasksSummaryMessage() {
+   return completedTasks > 0 ? `${completedTasks} de ${createdTasks}` : `${completedTasks}`;
+  }
+  
   return (
     <div className={styles.taskSummary}>
         <div className={styles.summaryWrapper}>
-            <p>Created tasks</p>
+            <p>Tarefas criadas</p>
                 <div className={styles.summaryCounter}>
-                    <span>0</span>
+                    <span>{createdTasks.toString()}</span>
                 </div>           
         </div>
         <div className={styles.summaryWrapper}>
-            <p>Completed tasks</p>
+            <p>Concluídas</p>
                 <div className={styles.summaryCounter}>
-                    <span>0</span>
+                   <span>{GetCompletedTasksSummaryMessage()}</span>
                 </div>           
         </div>
     </div>

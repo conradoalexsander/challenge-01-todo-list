@@ -1,19 +1,8 @@
-.checkMarkIconContainer {
-    background-color: var(--purple-dark);
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
+.iconWrapper {
+    width: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
-}
-
-.checkMarkIconContainer:hover {
-    background-color: var(--purple);
-    opacity: 0.9;
 }
 
 .checkedMarkIcon {

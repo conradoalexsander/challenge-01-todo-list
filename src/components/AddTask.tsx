@@ -25,7 +25,7 @@ export function AddTask({createNewTaskHandler: createNewTaskhandler}: AddTaskPro
   return (
     <div>
       <form onSubmit={handleCreateNewTask} className={styles.addTaskContainer}>
-        <input type="text" value={addTaskText} onChange={handleAddTaskTextChange}  placeholder="Add a new task"/>
+        <input type="text" value={addTaskText} onChange={handleAddTaskTextChange}  placeholder="Adicione uma nova tarefa"/>
         <button type="submit">Criar <img src={plusIcon}/></button>
       </form>
     </div>
