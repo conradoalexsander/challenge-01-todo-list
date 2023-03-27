@@ -1,16 +1,26 @@
-import { Task } from "./Task";
+import { Task } from "../types/Task";
+import { TaskItem } from "./TaskItem";
+import styles from "./TaskList.module.css";
 
-export function TaskList() {
+interface TaskListProps {
+  tasks: Task[];
+  deleteTaskHandler(id: string): void;
+  handleTaskDone(id: string): void;
+}
+
+export function TaskList({ tasks, deleteTaskHandler, handleTaskDone } : TaskListProps) {
   return (
-    <div>
-        <Task 
-          description="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." 
-          isDone={false} 
-        />
-        <Task 
-          description="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." 
-          isDone={true} 
-        />
+    <div className={styles.tasksList}>
+      {tasks.length > 0 && tasks.map(task =>{
+        return (<TaskItem
+          key={crypto.randomUUID()}
+          id={task.id}
+          description={task.description}
+          isDone={task.isDone}
+          deleteTaskHandler={deleteTaskHandler}
+          handleTaskDone={handleTaskDone}
+        />)
+      })}
     </div>
   );
 }
